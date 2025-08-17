@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Análisis de Funciones 🚀</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- KaTeX for Math Formulas -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css" xintegrity="sha384-n8MVd4RsNIU0KOVEMVIhbGKZC0BLirOZbMKAJdK2o24JYR/T5M/qAVlH2bKeMLap" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js" xintegrity="sha384-XjKyOOlGwcjNTAIQHIpgOno0Hl1YQqzUOEleOLALmuqehneUG+vnGctmUb0ZY0l8" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js" xintegrity="sha384-+VBxd3r6XgURycqtZ117nYw44OOcIax56Z4dCRWbxyPt0Koah1uHoK0o4+/RRE05" crossorigin="anonymous"></script>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* Apply Inter font family */
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        /* Style for KaTeX rendered formulas */
+        .katex {
+            font-size: 1.2em; /* Make formulas slightly larger */
+        }
+        /* Custom scrollbar for better aesthetics */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #8098be;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #475569;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #64748b;
+        }
+    </style>
+</head>
+<body class="bg-cyan-900 text-slate-300 antialiased">
+
+    <div class="container mx-auto p-4 md:p-8 max-w-4xl">
+        
+        <!-- Header -->
+        <header class="text-center mb-8">
+            <h1 class="text-3xl md:text-5xl font-bold text-white mb-2">
+                Guía Interactiva de Análisis deFunciones 🤓
+            </h1>
+            <p class="text-lg md:text-xl text-cyan-400">¡Domina el Dominio, Rango y más!</p>
+        </header>
+
+        <main class="bg-slate-800 rounded-2xl shadow-2xl shadow-cyan-500/10 overflow-hidden">
+            <!-- Tabs Navigation -->
+            <div class="border-b border-slate-700">
+                <nav class="flex flex-wrap -mb-px" id="tabs-nav">
+                    <button data-tab="introduccion" class="tab-btn active text-sm md:text-base font-medium text-center p-4 border-b-2 border-transparent hover:text-cyan-400 hover:border-cyan-400 transition-colors duration-300">🤔 ¿Qué es?</button>
+                    <button data-tab="dominio" class="tab-btn text-sm md:text-base font-medium text-center p-4 border-b-2 border-transparent hover:text-cyan-400 hover:border-cyan-400 transition-colors duration-300">🗺️ Dominio</button>
+                    <button data-tab="codominio" class="tab-btn text-sm md:text-base font-medium text-center p-4 border-b-2 border-transparent hover:text-cyan-400 hover:border-cyan-400 transition-colors duration-300">🎯 Codominio</button>
+                    <button data-tab="rango" class="tab-btn text-sm md:text-base font-medium text-center p-4 border-b-2 border-transparent hover:text-cyan-400 hover:border-cyan-400 transition-colors duration-300">🏹 Rango</button>
+                    <button data-tab="grafica" class="tab-btn text-sm md:text-base font-medium text-center p-4 border-b-2 border-transparent hover:text-cyan-400 hover:border-cyan-400 transition-colors duration-300">📈 Gráfica</button>
+                    <button data-tab="resumen" class="tab-btn text-sm md:text-base font-medium text-center p-4 border-b-2 border-transparent hover:text-cyan-400 hover:border-cyan-400 transition-colors duration-300">📋 Resumen</button>
+                </nav>
+            </div>
+
+            <!-- Tabs Content -->
+            <div class="p-6 md:p-8">
+                <!-- Introducción Tab -->
+                <div id="introduccion" class="tab-content">
+                    <h2 class="text-2xl font-bold text-white mb-4">¿Qué es Analizar una Función?</h2>
+                    <p class="text-lg leading-relaxed">
+                        Analizar una función es como ser un detective 🕵️‍♀️. Buscamos pistas para entender completamente su comportamiento: qué valores podemos usar, qué resultados obtenemos y dónde tiene "límites" o "puntos prohibidos".
+                    </p>
+                </div>
+
+                <!-- Dominio Tab -->
+                <div id="dominio" class="tab-content hidden">
+                    <h2 class="text-2xl font-bold text-white mb-4">Paso 1: Encontrar el Dominio</h2>
+                    <p class="mb-4">El <strong>Dominio</strong> es el conjunto de <strong>todos</strong> los valores que la variable $x$ puede tomar sin que la función se "rompa". Para encontrarlo, buscamos las <strong>restricciones</strong>. Las más comunes son:</p>
+                    <ul class="list-disc list-inside space-y-2 mb-6 bg-slate-900/50 p-4 rounded-lg">
+                        <li>🚫 ¡No dividirás por cero!</li>
+                        <li>🚫 ¡No sacarás raíz par (√, ⁴√, etc.) de un número negativo!</li>
+                    </ul>
+                    <h3 class="text-xl font-semibold text-cyan-400 mb-2">Ejemplo Práctico: $f(x) = \frac{x}{x-3}$</h3>
+                    <p class="mb-2"><strong>Análisis:</strong> Vemos que hay una división. La restricción es que el denominador <strong>no puede ser cero</strong>.</p>
+                    <p class="mb-2"><strong>Cálculo:</strong> Igualamos el denominador a cero para encontrar el "valor prohibido".</p>
+                    <div class="bg-slate-900 p-4 rounded-lg text-center my-4">
+                        <p>$x - 3 = 0 \implies x = 3$</p>
+                    </div>
+                    <p class="mb-2"><strong>Conclusión:</strong> El valor $x = 3$ está prohibido. Por lo tanto, $x$ puede ser cualquier número real, <strong>excepto el 3</strong>.</p>
+                    <p><strong>Notación de conjuntos:</strong> $Dom(f) = \{x \in \mathbb{R} \mid x \neq 3\}$</p>
+                    <p><strong>Notación de intervalos:</strong> $Dom(f) = (-\infty, 3) \cup (3, \infty)$</p>
+                </div>
+
+                <!-- Codominio Tab -->
+                <div id="codominio" class="tab-content hidden">
+                    <h2 class="text-2xl font-bold text-white mb-4">Paso 2: Identificar el Codominio</h2>
+                    <p class="mb-4">El <strong>Codominio</strong> es el conjunto de <strong>todos los valores que posiblemente</strong> podría arrojar la función. Es como el blanco al que apuntas.</p>
+                    <p>Generalmente, si no se especifica otra cosa, se asume que el codominio son <strong>todos los números reales ($\mathbb{R}$)</strong>. Es un conjunto de referencia, no un cálculo.</p>
+                    <div class="mt-6 p-4 bg-cyan-900/30 border-l-4 border-cyan-400 rounded-r-lg">
+                        <p>Para nuestro ejemplo $f(x) = \frac{x}{x-3}$, el codominio son todos los números reales, $\mathbb{R}$.</p>
+                    </div>
+                </div>
+
+                <!-- Rango Tab -->
+                <div id="rango" class="tab-content hidden">
+                     <h2 class="text-2xl font-bold text-white mb-4">Paso 3: Calcular el Rango</h2>
+                     <p class="mb-4">El <strong>Rango</strong> es el conjunto de <strong>todos los valores que la variable $y$ realmente toma</strong>. Para funciones racionales, el truco es <strong>despejar la $x$</strong>.</p>
+                     <h3 class="text-xl font-semibold text-cyan-400 mb-2">Ejemplo Práctico: $f(x) = \frac{x}{x-3}$</h3>
+                     <ol class="list-decimal list-inside space-y-4">
+                        <li>Reemplaza $f(x)$ por $y$: $y = \frac{x}{x-3}$</li>
+                        <li>Pasa el denominador a multiplicar: $y(x-3) = x$</li>
+                        <li>Aplica distributiva: $yx - 3y = x$</li>
+                        <li>Agrupa los términos con $x$: $yx - x = 3y$</li>
+                        <li>Saca factor común $x$: $x(y-1) = 3y$</li>
+                        <li>Despeja $x$: <div class="bg-slate-900 p-4 rounded-lg text-center my-2"><p>$x = \frac{3y}{y-1}$</p></div></li>
+                        <li>¡Analiza la nueva expresión! El nuevo denominador no puede ser cero: $y-1=0 \implies y=1$</li>
+                     </ol>
+                     <p class="mt-4"><strong>Conclusión:</strong> El valor $y = 1$ es un "valor prohibido" para el rango.</p>
+                     <p class="mt-2"><strong>Notación de conjuntos:</strong> $Ran(f) = \{y \in \mathbb{R} \mid y \neq 1\}$</p>
+                     <p><strong>Notación de intervalos:</strong> $Ran(f) = (-\infty, 1) \cup (1, \infty)$</p>
+                </div>
+
+                <!-- Gráfica Tab -->
+                <div id="grafica" class="tab-content hidden">
+                    <h2 class="text-2xl font-bold text-white mb-4">Paso 4: Visualizar con la Gráfica</h2>
+                    <p class="mb-4">Una gráfica nos ayuda a confirmar todo nuestro análisis. ¡Es la prueba final! Para $f(x) = \frac{x}{x-3}$:</p>
+                    <ul class="list-disc list-inside space-y-2 mb-6">
+                        <li>La restricción del dominio ($x \neq 3$) es una <strong>Asíntota Vertical</strong>.</li>
+                        <li>La restricción del rango ($y \neq 1$) es una <strong>Asíntota Horizontal</strong>.</li>
+                    </ul>
+                    <div class="bg-white p-4 rounded-lg">
+                        <!-- *** FIXED IMAGE LINK HERE *** -->
+                        <img src="funcion1.png" alt="Gráfica de la función f(x) = x/(x-3) con asíntotas en x=3 y y=1" class="w-full h-auto rounded-md" onerror="this.onerror=null;this.src='https://placehold.co/600x400/1e293b/ffffff?text=Gr%C3%A1fica+no+disponible';">
+                    </div>
+                     <p class="text-sm text-slate-400 mt-2 text-center">La gráfica se acerca a las líneas punteadas (asíntotas) pero nunca las toca.</p>
+                </div>
+
+                <!-- Resumen Tab -->
+                <div id="resumen" class="tab-content hidden">
+                    <h2 class="text-2xl font-bold text-white mb-4">Tabla Resumen del Análisis</h2>
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-left border-collapse">
+                            <thead class="bg-slate-900/50">
+                                <tr>
+                                    <th class="p-3 border-b-2 border-slate-700">Concepto</th>
+                                    <th class="p-3 border-b-2 border-slate-700">Análisis para $f(x) = \frac{x}{x-3}$</th>
+                                    <th class="p-3 border-b-2 border-slate-700">Resultado Final</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="border-b border-slate-700">
+                                    <td class="p-3 font-semibold">Dominio 🗺️</td>
+                                    <td class="p-3">El denominador no puede ser cero: $x-3 \neq 0$.</td>
+                                    <td class="p-3 font-mono text-cyan-400">$x \neq 3$</td>
+                                </tr>
+                                <tr class="border-b border-slate-700">
+                                    <td class="p-3 font-semibold">Codominio 🎯</td>
+                                    <td class="p-3">Se asume por defecto.</td>
+                                    <td class="p-3 font-mono text-cyan-400">$\mathbb{R}$</td>
+                                </tr>
+                                <tr class="border-b border-slate-700">
+                                    <td class="p-3 font-semibold">Rango 🏹</td>
+                                    <td class="p-3">Despejamos $x$ y analizamos el nuevo denominador: $y-1 \neq 0$.</td>
+                                    <td class="p-3 font-mono text-cyan-400">$y \neq 1$</td>
+                                </tr>
+                                <tr>
+                                    <td class="p-3 font-semibold">Restricciones 🚫</td>
+                                    <td class="p-3">Asíntota vertical en $x=3$ y horizontal en $y=1$.</td>
+                                    <td class="p-3 font-mono text-cyan-400">$x=3, y=1$</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        // --- Tab Switching Logic ---
+        const tabButtons = document.querySelectorAll('.tab-btn');
+        const tabContents = document.querySelectorAll('.tab-content');
+
+        tabButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Get the target tab from data attribute
+                const targetTab = button.dataset.tab;
+
+                // Deactivate all buttons and hide all content
+                tabButtons.forEach(btn => {
+                    btn.classList.remove('active', 'text-cyan-400', 'border-cyan-400');
+                    btn.classList.add('text-slate-400', 'border-transparent');
+                });
+                tabContents.forEach(content => {
+                    content.classList.add('hidden');
+                });
+
+                // Activate the clicked button and show its content
+                button.classList.add('active', 'text-cyan-400', 'border-cyan-400');
+                button.classList.remove('text-slate-400', 'border-transparent');
+                document.getElementById(targetTab).classList.remove('hidden');
+            });
+        });
+
+        // Set the first tab as active by default
+        document.querySelector('.tab-btn').classList.add('active', 'text-cyan-400', 'border-cyan-400');
+        document.querySelector('.tab-btn').classList.remove('text-slate-400', 'border-transparent');
+
+
+        // --- KaTeX Math Rendering ---
+        document.addEventListener("DOMContentLoaded", function() {
+            // This function finds and renders all math expressions in the document
+            renderMathInElement(document.body, {
+                delimiters: [
+                    {left: '$$', right: '$$', display: true},
+                    {left: '$', right: '$', display: false},
+                    {left: '\\(', right: '\\)', display: false},
+                    {left: '\\[', right: '\\]', display: true}
+                ],
+                throwOnError: false
+            });
+        });
+    </script>
+<p class="text-center text-lg text-teal-300 mt-8">
+            ¡Con esta guia, serás un crack en el análisis de funciones! 💪 <br> ¿Listo para practicar? ¡Date! ✨
+        </p>
+         <p class="text-center text-lg text-teal-300 mt-8">
+            © 2025 Prof. Felipe Martínez. Todos los derechos reservados.
+            Matemática Activa.
+        </p>
+</body>
+</html>
